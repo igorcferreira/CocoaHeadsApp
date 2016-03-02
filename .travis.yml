@@ -4,8 +4,9 @@ branches:
   - master
 git:
   submodules: false
-before_install: 
+before_install:
   - git submodule update --init --recursive
+  - brew install swiftlint
   - bundle install
 podfile: CocoaHeadsApp/Podfile
 xcode_workspace: CocoaHeadsApp/CocoaHeadsApp.xcworkspace
@@ -14,4 +15,3 @@ script: xctool -workspace CocoaHeadsApp/CocoaHeadsApp.xcworkspace -sdk iphonesim
 osx_image: xcode7.2
 notifications:
   email: false
-  slack: iosdevbr:jdozLqf7LLjEeho9PB3uRL6S
